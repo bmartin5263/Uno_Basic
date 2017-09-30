@@ -95,19 +95,19 @@ class Card():
         return bigNums
 
     def getColor(self):
-        '''Returns card's color.'''
+        """Returns card's color."""
         return self.color
 
     def getColorCode(self):
-        '''Returns card's color code.'''
+        """Returns card's color code."""
         return self.colorCode
 
     def getValue(self):
-        '''Returns card's value.'''
+        """Returns card's value."""
         return self.value
 
     def getPoints(self):
-        '''Returns card's point value.'''
+        """Returns card's point value."""
         return self.points
 
     def getRow(self, rowNum, hide=False):
@@ -146,7 +146,7 @@ class Card():
     ### -\/-  Set Card Information  -\/- ###
 
     def setColor(self, color):
-        '''Sets Card's color and escape code.'''
+        """Sets Card's color and escape code."""
         if color == 'blue':
             self.color = 'blue'
             self.colorCode = self.colors['blue']
@@ -191,11 +191,11 @@ class Card():
     ### -\/-  Wild Card Methods  -\/- ###
 
     def changeColor(self, color):
-        '''Changes Card's Color, Intended for Wild Cards.'''
+        """Changes Card's Color, Intended for Wild Cards."""
         self.setColor(color)
 
     def isWild(self):
-        '''Returns if card is a wild card.'''
+        """Returns if card is a wild card."""
         return self.wild
 
     def isZero(self):

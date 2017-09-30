@@ -38,9 +38,6 @@ class Deck():
     def draw(self):
         return self.deck.pop()
 
-    def place(self, card):
-        return self.deck.append(card)
-
     def insert(self, card):
         self.deck.insert(0, card)
 

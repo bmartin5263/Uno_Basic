@@ -1,5 +1,6 @@
 import os
 import sys
+
 from game_settings import GameSettings
 from player import Player
 from computer_player import ComputerPlayer
@@ -66,10 +67,9 @@ def Uno():
 
     def playMatch(gs):
         for i in range(1):
-            i
             m = Match(gs)
             m.begin()
-            while (not m.isComplete()):
+            while not m.isComplete():
                 m.nextTurn()
             gs = m.end(gs)
         return gs
@@ -119,7 +119,7 @@ def Uno():
         playerNum = gs.getPlayerNum()
         message = "\033[97mPlease Enter Player Number to Remove: \033[91m".format(playerNum)
 
-        while (not complete):
+        while not complete:
             print(drawMainMenu(gs))
             number = str(input(message))
             if len(number) == 0:

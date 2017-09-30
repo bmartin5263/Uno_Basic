@@ -6,7 +6,6 @@ class ComputerPlayer(Player):
     def __init__(self, name):
         super().__init__(name)
         self.type = 'Computer'
-        self.begun = False
         self.colorsInHand = {'red': 0, 'blue': 0, 'green': 0, 'yellow': 0, 'wild': 0}
         self.colorsOutHand = {}
         self.currentColor = ""

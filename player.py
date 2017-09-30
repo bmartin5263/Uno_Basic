@@ -17,7 +17,6 @@ class Player():
         self.canDrawFour = False
         self.canValueChange = False
         self.drew = False
-        self.scrollMax = 0
         self.points = 0
         self.forceDraw = 0
 
