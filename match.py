@@ -3,6 +3,7 @@ import time
 import os
 import random
 from deck import Deck
+from card import Card
 from game_settings import GameSettings
 
 class Match():
@@ -220,7 +221,6 @@ class Match():
         for i in ('play1', 'play2', 'play3', 'play4'):
             if i in self.players:
                 for j in range(7):
-                    j  # unused
                     self.dealCard(i)
                     if self.displayEffects and not self.simulation:
                         print(self.drawScreen(True))
@@ -255,7 +255,6 @@ class Match():
             print(self.drawScreen(hide))
             time.sleep(1)
             for i in range(2):
-                i  # unused
                 self.elements['P{}Turn'.format(self.turn[-1])] = '\033[91m'
                 print(self.drawScreen(hide))
                 time.sleep(.3)
@@ -301,7 +300,6 @@ class Match():
             self.elements['Console'] = 'Wild Card! Changing Color.'
             seed = 1
             for i in range(10):
-                i  # unused
                 if seed > 4:
                     seed = 1
                 print(self.drawScreen(hide, wildSeed=seed))
@@ -342,7 +340,6 @@ class Match():
         j = 8
         self.elements['Deck'] = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
         for i in range(math.ceil(len(self.deck) / 12)):
-            i  # unused
             self.elements['Deck'][j] = '='
             j -= 1
 
@@ -350,6 +347,7 @@ class Match():
         if card == None:
             ### Used At Beginning For First Card ###
             card = self.deck.draw()
+            card = Card('wild','W')
             self.elements['DNum'] = len(self.deck)
 
         cardColor = card.getColorCode()
@@ -635,9 +633,6 @@ class Match():
 
     def isComplete(self):
         return self.matchComplete
-
-    def next(self):
-        self.turn = self.getNextTurn()
 
     def getNextTurn(self, forceReverse=False):
         if forceReverse:

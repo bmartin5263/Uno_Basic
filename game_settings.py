@@ -17,13 +17,13 @@ class GameSettings():
         self.computerSpeed = 'normal'
 
     def canAddPlayer(self):
-        return (self.numPlayers < 4)
+        return self.numPlayers < 4
 
     def canRemovePlayer(self):
-        return (self.numPlayers > 0)
+        return self.numPlayers > 0
 
     def canBegin(self):
-        return (self.numPlayers > 1)
+        return self.numPlayers > 1
 
     def addPlayer(self, player):
         self.playerStaging.append(player)
@@ -97,7 +97,6 @@ class GameSettings():
         playerRowKey = 'play{}row{}'
         i = 1
         for j in self.playerStaging:
-            j
             colorCode = ['\033[91m', '\033[94m', '\033[92m', '\033[93m']
             key = playerBoxKey.format(i)
             self.mainMenuElements[key] = colorCode[i - 1]

@@ -23,7 +23,7 @@ class Hand():
 
     def removeCard(self, index):
         index = int(index)
-        if (0 <= index < len(self)):
+        if 0 <= index < len(self):
             return self.hand.pop(index)
 
     def discard(self):
@@ -48,7 +48,6 @@ class Hand():
                 footer += (self[indexNum].getRow(3, hide) + ' ')
                 num += 1
         for j in range(10 - num):
-            j  # unused
             header += ('     ')
             footer += ('     ')
             upper += ('     ')
@@ -62,7 +61,6 @@ class Hand():
             output += '({})'.format(k)
             output += '--'
         for l in range(10 - num):
-            l  # unused
             output += '-----'
         output += '(>)--|\033[0m\n'
         return output
